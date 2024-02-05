@@ -3,5 +3,5 @@ plotly
 streamlit
 streamlit-metrics
 pandas-datareader
-matplotlib
+matplotlib.pyplot
 seaborn
