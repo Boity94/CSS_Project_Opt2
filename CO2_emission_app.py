@@ -56,7 +56,7 @@ def visualize_data(df):
 
     if visualization_type == 'Line Chart':
         # Line chart example
-        plt.figure(figsize=(10, 6))
+        #plt.figure(figsize=(10, 6))
         sns.lineplot(x='Year', y='Emissions', data=df)
         plt.title('CO2 Emission Over Time')
         plt.xlabel('Year')
@@ -66,14 +66,14 @@ def visualize_data(df):
     elif visualization_type == 'Pie Chart':
         # Pie chart example
         pie_data = df['Year'].value_counts()
-        plt.figure(figsize=(10, 6))
+        #plt.figure(figsize=(10, 6))
         plt.pie(pie_data, labels=pie_data.index, autopct='%1.1f%%', startangle=90)
         plt.title('CO2 Emission Distribution by year')
         st.pyplot()
 
     elif visualization_type == 'Histogram':
         # Histogram example
-        plt.figure(figsize=(10, 6))
+        #plt.figure(figsize=(10, 6))
         sns.histplot(df['Emissions'], bins=30, kde=True)
         plt.title('Histogram of CO2 Emission')
         plt.xlabel('CO2 Emission')
