@@ -67,7 +67,7 @@ def visualize_data(df):
     elif visualization_type == 'Pie Chart':
         # Pie chart example
         pie_data = df['Year'].value_counts()
-        fig, ax = plt.subplots(figsize=(10, 6))
+        #fig, ax = plt.subplots(figsize=(10, 6))
         ax.pie(pie_data, labels=pie_data.index, autopct='%1.1f%%', startangle=90)
         ax.set_title('CO2 Emission Distribution by Country')
         st.pyplot(fig)
@@ -75,7 +75,7 @@ def visualize_data(df):
     elif visualization_type == 'Histogram':
         # Histogram example
         #fig, ax = plt.subplots(figsize=(10, 6))
-        plt.hist(df['Emissions'], bins=30, kde=True, ax=ax)
+        plt.hist(df['Emissions'], bins=30, edgecolor='black')
         ax.set_title('Histogram of CO2 Emissions')
         ax.set_xlabel('CO2 Emission')
         ax.set_ylabel('Frequency')
