@@ -70,7 +70,7 @@ def visualize_data(df):
         plt.figure(figsize=(10, 6))
         plt.pie(pie_data, labels=pie_data.index, autopct='%1.1f%%', startangle=90)
         plt.title('CO2 Emission Distribution by year')
-         st.pyplot()
+        st.pyplot()
 
     elif visualization_type == 'Histogram':
         # Histogram example
