@@ -8,7 +8,7 @@ Created on Mon Feb  5 09:48:19 2024
 
 import streamlit as st
 import pandas as pd
-import matplotlib as plt
+import matplotlib.pyploy as plt
 import seaborn as sns
 
 # Load the CO2 emission dataset
