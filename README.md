@@ -1,7 +1,6 @@
 # CSS_Project_Option-2-Streamlit
 
-# CO2 Emission Data Exploration Streamlit App
-
+# 💨 Emission Data Exploration Streamlit App💨
 This Streamlit app is designed to explore, clean, transform, and visualize global CO2 emission data.
 
 ## Getting Started
