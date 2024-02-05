@@ -3,6 +3,6 @@ plotly
 streamlit
 streamlit-metrics
 pandas-datareader
-matplotlib
+matplotlib==3.4.1
 seaborn
 spyder
