@@ -51,36 +51,34 @@ def clean_and_transform_data(df):
 def visualize_data(df):
     st.title('Data Visualization')
 
-    # Choose a visualization type
+     # Choose a visualization type
     visualization_type = st.sidebar.radio('Choose Visualization Type', ('Line Chart', 'Pie Chart', 'Histogram'))
 
     if visualization_type == 'Line Chart':
         # Line chart example
-        #fig, ax = plt.subplots(figsize=(10, 6))
-        plt.line(x='Year', y='Emissions', data=df, ax=ax)
-        ax.set_title('CO2 Emission Over Time')
-        ax.set_xlabel('Year')
-        ax.set_ylabel('CO2 Emission')
-        st.pyplot(fig)
-       
+        plt.figure(figsize=(10, 6))
+        sns.lineplot(x='Year', y='Emissions', data=df)
+        plt.title('CO2 Emission Over Time')
+        plt.xlabel('Year')
+        plt.ylabel('CO2 Emission')
+        st.pyplot()
 
     elif visualization_type == 'Pie Chart':
         # Pie chart example
         pie_data = df['Year'].value_counts()
-        #fig, ax = plt.subplots(figsize=(10, 6))
-        ax.pie(pie_data, labels=pie_data.index, autopct='%1.1f%%', startangle=90)
-        ax.set_title('CO2 Emission Distribution by Country')
-        st.pyplot(fig)
+        plt.figure(figsize=(10, 6))
+        plt.pie(pie_data, labels=pie_data.index, autopct='%1.1f%%', startangle=90)
+        plt.title('CO2 Emission Distribution by year')
+        st.pyplot()
 
     elif visualization_type == 'Histogram':
         # Histogram example
-        #fig, ax = plt.subplots(figsize=(10, 6))
-        plt.hist(df['Emissions'], bins=30, edgecolor='black')
-        ax.set_title('Histogram of CO2 Emissions')
-        ax.set_xlabel('CO2 Emission')
-        ax.set_ylabel('Frequency')
-        st.pyplot(fig)
-
+        plt.figure(figsize=(10, 6))
+        sns.histplot(df['Emissions'], bins=30, kde=True)
+        plt.title('Histogram of CO2 Emission')
+        plt.xlabel('CO2 Emission')
+        plt.ylabel('Frequency')
+        st.pyplot()
 def main():
     st.sidebar.title('Navigation')
     page = st.sidebar.radio('Go to', ('Explore Data', 'Clean and Transform Data', 'Data Visualization'))
