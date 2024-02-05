@@ -4,3 +4,4 @@ streamlit
 streamlit-metrics
 pandas-datareader
 matplotlib
+seaborn
