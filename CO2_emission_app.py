@@ -8,7 +8,7 @@ Created on Mon Feb  5 09:48:19 2024
 
 import streamlit as st
 import pandas as pd
-import matplotlib.pyplot as plt
+import matplotlib as plt
 import seaborn as sns
 
 # Load the CO2 emission dataset
@@ -61,7 +61,7 @@ def visualize_data(df):
         plt.title('CO2 Emission Over Time')
         plt.xlabel('Year')
         plt.ylabel('CO2 Emission')
-        st.pyplot()
+        #st.pyplot()
 
     elif visualization_type == 'Pie Chart':
         # Pie chart example
@@ -69,7 +69,7 @@ def visualize_data(df):
         plt.figure(figsize=(10, 6))
         plt.pie(pie_data, labels=pie_data.index, autopct='%1.1f%%', startangle=90)
         plt.title('CO2 Emission Distribution by year')
-        st.pyplot()
+        #st.pyplot()
 
     elif visualization_type == 'Histogram':
         # Histogram example
@@ -78,7 +78,7 @@ def visualize_data(df):
         plt.title('Histogram of CO2 Emission')
         plt.xlabel('CO2 Emission')
         plt.ylabel('Frequency')
-        st.pyplot()
+        #st.pyplot()
 
 def main():
     st.sidebar.title('Navigation')
