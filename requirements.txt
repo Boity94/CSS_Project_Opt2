@@ -2,7 +2,7 @@ pandas
 plotly
 streamlit
 pandas-datareader
-pandas 
-matplotlib
-seaborn 
-spyder
+#pandas 
+#matplotlib
+#seaborn 
+#spyder
