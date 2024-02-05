@@ -19,7 +19,7 @@ def load_data():
 
 # Data exploration section
 def explore_data(df):
-    st.title('💨 CO2 Emission Over The 3 Decades💨')
+    st.title('💨 Global CO2 Emission Over Analysis 💨')
     
     # Display the dataset
     st.subheader('Raw Data')
