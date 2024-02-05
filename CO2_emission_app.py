@@ -75,7 +75,7 @@ def visualize_data(df):
         # Histogram example
         #plt.figure(figsize=(10, 6))
         #sns.histplot(df['Emissions'], bins=30, kde=True)
-        plt.barh(df["Emissions], bins=30, kde=True)
+        plt.bar(df["year"],df["Emissions])
         plt.title('Histogram of CO2 Emission')
         plt.xlabel('CO2 Emission')
         plt.ylabel('Frequency')
