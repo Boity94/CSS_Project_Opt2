@@ -57,7 +57,7 @@ def visualize_data(df):
     if visualization_type == 'Line Chart':
         # Line chart example
         #fig, ax = plt.subplots(figsize=(10, 6))
-        sns.lineplot(x='Year', y='CO2_emission', data=df, ax=ax)
+        plt.line(x='Year', y='CO2_emission', data=df, ax=ax)
         ax.set_title('CO2 Emission Over Time')
         ax.set_xlabel('Year')
         ax.set_ylabel('CO2 Emission')
@@ -75,7 +75,7 @@ def visualize_data(df):
     elif visualization_type == 'Histogram':
         # Histogram example
         #fig, ax = plt.subplots(figsize=(10, 6))
-        sns.histplot(df['Emissions'], bins=30, kde=True, ax=ax)
+        plt.hist(df['Emissions'], bins=30, kde=True, ax=ax)
         ax.set_title('Histogram of CO2 Emissions')
         ax.set_xlabel('CO2 Emission')
         ax.set_ylabel('Frequency')
