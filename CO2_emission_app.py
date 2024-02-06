@@ -57,7 +57,7 @@ def visualize_data(df):
     if visualization_type == 'Line Chart':
         # Line chart example
         #fig, ax = plt.subplots(figsize=(10, 6))
-        plt.lineplot(x='Year', y='Emissions', data=df, ax=ax)
+        plt.plot(x='Year', y='Emissions', data=df, ax=ax)
         ax.set_title('CO2 Emission Over Time')
         ax.set_xlabel('Year')
         ax.set_ylabel('CO2 Emission')
