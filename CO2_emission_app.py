@@ -53,31 +53,33 @@ def visualize_data(df):
 
      # Choose a visualization type
     visualization_type = st.sidebar.radio('Choose Visualization Type', ('Line Chart', 'Pie Chart', 'Histogram'))
+    
+if visualization_type == 'Line Chart':
+    # Line chart example
+    fig, ax = plt.subplots(figsize=(10, 6))
+    sns.lineplot(x='Year', y='Emissions', data=df, ax=ax)
+    ax.set_title('CO2 Emission Over Time')
+    ax.set_xlabel('Year')
+    ax.set_ylabel('CO2 Emission')
+    st.write(fig)
 
-    if visualization_type == 'Line Chart':
+elif visualization_type == 'Pie Chart':
+    # Pie chart example
+    pie_data = df['Emissions'].value_counts()
+    fig, ax = plt.subplots(figsize=(10, 6))
+    ax.pie(pie_data, labels=pie_data.index, autopct='%1.1f%%', startangle=90)
+    ax.set_title('CO2 Emission Distribution by Country')
+    st.write(fig)
 
-        # Line chart example
-        sns.lineplot(x='Year', y='Emissions', data=df, ax=ax1)
-        plt.set_title('CO2 Emission Over Time')
-        plt.set_xlabel('Year')
-        plt.set_ylabel('CO2 Emission')
+elif visualization_type == 'Histogram':
+    # Histogram example
+    fig, ax = plt.subplots(figsize=(10, 6))
+    sns.histplot(df['Emissions'], bins=30, kde=True, ax=ax)
+    ax.set_title('Histogram of CO2 Emission')
+    ax.set_xlabel('CO2 Emission')
+    ax.set_ylabel('Frequency')
+    st.write(fig)
 
-    elif visualization_type == 'Pie Chart':
-        # Pie chart example
-        pie_data = df['Year'].value_counts()
-        #plt.figure(figsize=(10, 6))
-        plt.pie(pie_data, labels=pie_data.index, autopct='%1.1f%%', startangle=90)
-        ax.title('CO2 Emission Distribution by year')
-        st.pyplot()
-
-    elif visualization_type == 'Histogram':
-        # Histogram example
-        #plt.figure(figsize=(10, 6))
-        sns.histplot(df['Emissions'], bins=30, kde=True)
-        plt.title('Histogram of CO2 Emission')
-        plt.xlabel('CO2 Emission')
-        plt.ylabel('Frequency')
-        st.pyplot()
 def main():
     st.sidebar.title('Navigation')
     page = st.sidebar.radio('Go to', ('Explore Data', 'Clean and Transform Data', 'Data Visualization'))
