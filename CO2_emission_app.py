@@ -56,12 +56,11 @@ def visualize_data(df):
 
     if visualization_type == 'Line Chart':
 
-        fig, (ax1) = plt.subplots(1, 1, figsize=(10, 12))
         # Line chart example
         sns.lineplot(x='Year', y='Emissions', data=df, ax=ax1)
-        ax1.set_title('CO2 Emission Over Time')
-        ax1.set_xlabel('Year')
-        ax1.set_ylabel('CO2 Emission')
+        plt.set_title('CO2 Emission Over Time')
+        plt.set_xlabel('Year')
+        plt.set_ylabel('CO2 Emission')
 
     elif visualization_type == 'Pie Chart':
         # Pie chart example
